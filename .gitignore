@@ -8,3 +8,7 @@ client/.next
 
 api/*.txt
 client/*.txt
+
+# Ignore all text files
+
+*.txt
