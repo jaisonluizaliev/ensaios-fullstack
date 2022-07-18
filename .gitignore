@@ -5,3 +5,6 @@ client/node_modules
 
 /.next
 client/.next
+
+api/*.txt
+client/*.txt
