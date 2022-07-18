@@ -1,0 +1,14 @@
+
+criar api....
+
+criar ainda um layout
+
+criar regras de negocio
+
+criar tema dark
+
+
+como vai funcionar  este projeto a principio ele ira consultar os dados na api para
+montar os proximos ensaios na região
+para isso irei fazer ele buscar os dados por semana/por dia / e geral/
+a igreja ira ter {dia de ensaio, nome do encarregado, numero do encarregado, endereço e dia de ensaio}

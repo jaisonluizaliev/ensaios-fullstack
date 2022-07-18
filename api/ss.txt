@@ -1,0 +1,42 @@
+{
+      state_name: 'Santa Catarina',
+    },
+    {
+      state_name: 'Paraná',
+    },
+    {
+      state_name: 'Rio Grande do Sul',
+    }, 
+ 
+ await knex('regionals').del();
+  await knex('regionals').insert([
+    {
+      regional_name: 'Tubarão',
+      regional_address:
+        'Rua Engenheiro Annes Gualberto, 1172 - Santo Antônio de Pádua, Tubarão - SC, 88701-360',
+    },
+    {
+      regional_name: 'Joinville',
+      regional_address: 'Boa Vista, Joinville - SC, 89205-306',
+    },
+    {
+      regional_name: 'Itajaí',
+      regional_address: 'R. São Paulo, 85 - São Judas, Itajaí - SC, 88303-330',
+    },
+    {
+      regional_name: 'Caçador',
+      regional_address:
+        'R. Hercílio Luz, 185 - Paraíso, Caçador - SC, 89500-000',
+    },
+  ]);
+  await knex('sub_regionals').del();
+  await knex('sub_regionals').insert([
+    {
+      sub_regional_name: 'Campinas - São José ',
+      sub_regional_address: 'Av. Salvador di Bernardi, 795 - Campinas CEP: 88101-260 - São José-SC',
+    },
+  ]);
+  await knex('sectors').del();
+  await knex('sectors').insert([]);
+  await knex('churchs').del();
+  await knex('churchs').insert([]);
