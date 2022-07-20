@@ -3,9 +3,9 @@
  * @returns { Promise<void> }
  */
 export function up(knex) {
-  return knex.schema.table('churchs', table => {
-    table.string('rehearsal_time').notNullable();
-  })
+return knex.schema.table('churchs', table => {
+  table.text('church_image')
+})
 };
 
 /**
@@ -13,7 +13,7 @@ export function up(knex) {
  * @returns { Promise<void> }
  */
 export function down (knex) {
-  return knex.schema.table('churchs', table => {
-    table.dropColumn('rehearsal_time') 
-  })
+   return knex.schema.table('churchs', (table) => {
+     return table.dropColumn('church_image');
+   });
 };

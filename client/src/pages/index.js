@@ -1,6 +1,8 @@
-import React from 'react';
-// import Layout from '../components/Layout/Layout';
+import React, { useContext, useEffect } from 'react';
+import Test from '../components/test';
+import Layout from '../components/Utils/Layout';
 import api from '../services/api';
+import { Store } from '../store/store';
 
 export default function Index({
   states,
@@ -9,26 +11,26 @@ export default function Index({
   sectors,
   churchs,
 }) {
-  console.log([{ states, regionals, subRegionals, sectors, churchs }]);
+  const { dispatch } = useContext(Store);
 
-  const churches = churchs.map(
-    (c) => (
-      <div>
-        
-        <h4>Igreja: {c.church_name}</h4>
-        <h4>Endereço: {c.church_address}</h4> <h4>Encarregado: {c.in_charge}</h4>{' '}
-        <h4>
-          Contato:
-          {c.in_charge_contact}
-        </h4>{' '}
-        <h4>Dia de Ensaio: {c.rehearsal_day}</h4>
-        <h4>Horário: {c.rehearsal_time}</h4>
-        <h4>Administração: {c.is_adm ? 'Sim' : 'Não'}</h4>
-      </div>
-    )
+  useEffect(() => {
+    async function load() {
+      await dispatch({
+        type: 'ALL_DATA',
+        payload: { states, regionals, subRegionals, sectors, churchs },
+      });
+    }
+
+    load();
+  }, []);
+
+ 
+
+  return (
+    <Layout>
+      <Test/>
+    </Layout>
   );
-
-  return <>{churches}</>;
 }
 
 export async function getServerSideProps() {
@@ -41,8 +43,6 @@ export async function getServerSideProps() {
   const { data: sectors } = await api.get('/sectors');
 
   const { data: churchs } = await api.get('/churchs');
-
-  console.log(sectors);
 
   return {
     props: {
