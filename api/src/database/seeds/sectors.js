@@ -7,34 +7,25 @@ export async function seed(knex) {
   await knex('sectors').del();
   await knex('sectors').insert([
     {
-      sector_name: 'São José',
-      sector_number: 1,
-
-      sub_regional_id: 1,
+      sector_name: '01 - Florianópolis',
+      sector_image: 'https://i.postimg.cc/HnXrW1PR/ingleses.png',
     },
     {
-      sector_name: 'Florianópolis',
-      sector_number: 2,
+      sector_name: '02 - São José',
+      sector_image: 'https://i.postimg.cc/0NnxTLTk/campinas.png',
+    },
 
-      sub_regional_id: 1,
+    {
+      sector_name: '03 - Palhoça',
+      sector_image: 'https://i.postimg.cc/PxBLk5K1/ponte-imarui.png',
     },
     {
-      sector_name: 'Palhoça',
-      sector_number: 3,
-
-      sub_regional_id: 1,
+      sector_name: '04 - Biguaçu',
+      sector_image: 'https://i.postimg.cc/gJww5ZyY/bigua-u.png',
     },
     {
-      sector_name: 'Biguaçu',
-      sector_number: 4,
-
-      sub_regional_id: 1,
-    },
-    {
-      sector_name: 'Serra',
-      sector_number: 5,
-
-      sub_regional_id: 1,
+      sector_name: '05 - Serra',
+      sector_image: 'https://i.postimg.cc/jqZ9vngW/painel.png',
     },
   ]);
-};
+}

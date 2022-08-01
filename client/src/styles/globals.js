@@ -12,8 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   html, body {
     font-size: 100%;
-  background-color: #fafafa;
-
+    background-image:url('https://f.vividscreen.info/soft/cdf60e61f85f0b6a08a504cd870a6dec/Music-Notes-1440x900.jpg');
   }
   @media (min-width: 600px) {
     html, body {
@@ -25,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   }
-  ul {
+  ul, li {
     list-style: none;
   }
 `;
